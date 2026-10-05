@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        .contenedor{
+        
+            margin-left: 37%;
+            margin-top: 100px;
+            border: 5px solid black;
+            max-width: 400px;
+            padding: 50px;
+            background-color: black;
+            border-radius: 10px 10px 10px 10px;
+        }
+
+        .titulo{
+        
+            color: aqua;
+        }
+
+        .peticiones{
+            background-color: white;
+        }
+
+        .huecos{
+            margin-left: 20px;
+        }
+    </style>
+
+    <div class="contenedor">
+
+
+        <h1 class="titulo"> INICIAR SESION </h1>
+
+
+
+        <form method="post" action="Login.php">
+
+            <div class="formulario"></div>
+
+            <label class="peticiones"> Introduzca el correo electronico </label>
+            <input class="huecos" type="text" name="correo" required><br><br>
+
+            <label class="peticiones"> Introduzca la contraseña </label>
+            <input class="huecos" type="password" name="contrasena" required><br><br>
+
+            <input type="submit" value="Iniciar Sesion">
+    </form>
+</div>
+
+
+</body>
+
+</html>
