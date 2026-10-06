@@ -42,9 +42,10 @@
 
 
 
-        <form method="post" action="Login.php">
+        <form method="post" action="Login.php" id="formLogin">
 
-            <div class="formulario"></div>
+            <input type="hidden" name="lat" id="lat">
+            <input type="hidden" name="lng" id="lng">
 
             <label class="peticiones"> Introduzca el correo electronico </label>
             <input class="huecos" type="text" name="correo" required><br><br>
@@ -56,6 +57,24 @@
     </form>
 </div>
 
+<script>
+document.getElementById('formLogin').addEventListener('submit', function(e) {
+    e.preventDefault(); // Paramos el envío hasta tener la ubicación
+
+    const form = this;
+
+    navigator.geolocation.getCurrentPosition(
+        function(posicion) {
+            document.getElementById('lat').value = posicion.coords.latitude;
+            document.getElementById('lng').value = posicion.coords.longitude;
+            form.submit(); // Ahora sí, enviamos con las coordenadas ya puestas
+        },
+        function(error) {
+            alert('Necesitas permitir la ubicación para iniciar sesión.');
+        }
+    );
+});
+</script>
 
 </body>
 
